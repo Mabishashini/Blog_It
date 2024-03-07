@@ -1,24 +1,18 @@
-import express from "express";
-import dotenv from "dotenv"
-import mongoose from "mongoose"
+const express = require("express")
+const dotenv = require("dotenv")
+const mongoose = require("mongoose")
+const authRoute = require("./routes/auth")
+
 
 const app = express();
 
 dotenv.config()
 
+app.use(express.json())
+
 mongoose.connect(process.env.MongoDB_URL).then(()=>console.log("Connected to MongoDB")).catch((err)=> console.log(err))
 
-// const UserSchema=new mongoose.Schema({
-//     name:String,
-//     age:Number
-// });
-
-
-
-
-// app.post("/register",function(req,res){
-
-// })
+app.use("/api/auth", authRoute)
 
 app.get("/", (req, res) => {
     res.send("hello");

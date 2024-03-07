@@ -8,7 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 
 export const Topbar = () => {
-  const user = false;
+  const user = true;
   return (
     <div className="topbar">
       <div className="topleft">
