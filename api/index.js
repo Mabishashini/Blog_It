@@ -11,7 +11,7 @@ const cors = require("cors")
 
 const app = express();
 
-const allowedOrigins = ["hhttps://blog-it-dun.vercel.app", "http://localhost:3000"];
+const allowedOrigins = ["https://blog-it-dun.vercel.app", "http://localhost:3000"];
 
 const corsOptions = {
   origin: allowedOrigins,
