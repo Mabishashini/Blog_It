@@ -79,6 +79,7 @@ router.get("/:id",async (req, res) => {
 
 //get all post
 router.get("/", async (req, res) => {
+    console.log("req ", req)
     const username = req.query.user;
     const catName = req.query.cat;
     try{
@@ -92,9 +93,11 @@ router.get("/", async (req, res) => {
             }})
         }
         else{
+
             posts = await Post.find()
         }
         res.status(200).json(posts)
+        console.log(posts)
     }catch(err){
         res.status(500).json(err)
         console.log(err)

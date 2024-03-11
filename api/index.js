@@ -7,8 +7,17 @@ const postRoute = require("./routes/posts")
 const categoryRoute = require("./routes/categories")
 const multer = require("multer")
 const path = require("path")
+const cors = require("cors")
 
 const app = express();
+
+const allowedOrigins = ["hhttps://blog-it-dun.vercel.app", "http://localhost:3000"];
+
+const corsOptions = {
+  origin: allowedOrigins,
+};
+
+app.use(cors(corsOptions));
 
 dotenv.config()
 

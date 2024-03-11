@@ -10,9 +10,11 @@ import { Register } from './pages/register/Register';
 import {Route, Routes} from "react-router-dom";
 import { useContext } from 'react';
 import { Context } from './context/Context';
+import axios from 'axios';
 
 function App() {
   const {user} = useContext(Context)
+  axios.defaults.baseURL="http://localhost:5000/api";
   return (
   
     <div className="App">
