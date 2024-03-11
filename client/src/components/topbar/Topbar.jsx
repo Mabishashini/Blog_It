@@ -11,7 +11,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 export const Topbar = () => {
   const {user, dispatch} = useContext(Context);
 
-  const PF = "http://localhost:5000/images/"
+  const PF = "https://blog-it-8pw8.onrender.com/images/"
 
 
   const handleLogout =(e) => {

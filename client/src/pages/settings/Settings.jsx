@@ -23,7 +23,7 @@ export const Settings = () => {
   const [emailformError, setEmailformError] = useState(false);
   const [error, setError] = useState(false)
 
-  const PF = "http://localhost:5000/images/";
+  const PF = "https://blog-it-8pw8.onrender.com/images/";
 
   const isValidEmail = (email) => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
