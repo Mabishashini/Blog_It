@@ -14,7 +14,7 @@ import axios from 'axios';
 
 function App() {
   const {user} = useContext(Context)
-  axios.defaults.baseURL="http://localhost:5000/api";
+  axios.defaults.baseURL="https://blog-it-8pw8.onrender.com";
   return (
   
     <div className="App">
