@@ -1,29 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Topbar.css";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import PinterestIcon from "@mui/icons-material/Pinterest";
-import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 export const Topbar = () => {
-  const user = true;
+  const {user, dispatch} = useContext(Context);
+
+  const PF = "http://localhost:5000/images/"
+
+
+  const handleLogout =(e) => {
+    e.preventDefault()
+    dispatch({type : "LOGOUT"})
+  }
   return (
     <div className="topbar">
       <div className="topleft">
-        <div className="topIcon">
-          <InstagramIcon />
-        </div>
-        <div className="topIcon">
-          <FacebookIcon />
-        </div>
-        <div className="topIcon">
-          <TwitterIcon />
-        </div>
-        <div className="topIcon">
-          <PinterestIcon />
-        </div>
+        <h3 className="topbarTitle">Blog<span className="topbarTitlespan">It</span></h3>
       </div>
       <div className="topcenter">
         <ul className="topList">
@@ -32,32 +30,25 @@ export const Topbar = () => {
               HOME
             </Link>
           </li>
-          <li className="topListItem">
-            <Link to="/about" className="link">
-              ABOUT
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link to="/contact" className="link">
-              CONTACT
-            </Link>
-          </li>
+          
           <li className="topListItem">
             <Link to="/write" className="link">
               WRITE
             </Link>
           </li>
-          <li className="topListItem">{user && "LOGOUT"}</li>
+          <li className="topListItem" onClick={handleLogout}>{user && "LOGOUT"}</li>
         </ul>
       </div>
       <div className="topright">
         {user ? (
           <>
-            <img
+          <Link to="/settings">
+          {user.profilePic ? (<img
               className="topImg"
-              src="https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&w=600"
-              alt=""
-            />
+              src={PF + user.profilePic} alt=""
+            />) :(<AccountCircleIcon className="topImg"/>)}
+          </Link>
+            
           </>
         ) : (
           <>
@@ -75,9 +66,7 @@ export const Topbar = () => {
             </ul>
           </>
         )}
-        <div className="searchIcon">
-          <SearchIcon />{" "}
-        </div>
+       
       </div>
     </div>
   );

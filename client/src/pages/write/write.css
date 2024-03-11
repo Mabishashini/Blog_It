@@ -11,6 +11,7 @@
 .writeFormGroup{
     display:flex;
     gap:30px;
+    flex-direction: column;
 }
 
 .writeIcon{
@@ -36,17 +37,19 @@
 }
 .writeText{
     font-size: 20px;
-    height: 100vh;
+    height: 50vh;
 }
 .writeSubmit{
     color:white;
     background-color: teal;
     padding:6px 15px;
     height:35px;
+    width:100px;
     border:none;
     border-radius: 10px;
     cursor:pointer;
     font-size: 16px;
+    margin-top:30px;
 }
 .writeImg{
     width: 100%;
@@ -54,3 +57,70 @@
     border-radius: 10px;
     object-fit: cover;
 }
+
+.writeCheckboxGroup{
+    margin:auto;
+}
+.writeCheckboxlabel{
+    margin:auto;
+    margin-left: 5px;
+}
+.categories{
+    margin-top: 30px;
+    width:50%;
+}
+
+.writeAddicon{
+    border:none;
+    outline:none;
+    border-radius: 5%;
+    color:white;
+    background-color: coral;
+}
+
+.writeCheckboxInput{
+    border:none;
+    padding:10px 20px;
+    margin:10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.writeAddicon{
+    margin-left :10px;
+    border-radius: 25%;
+}
+
+/* Add responsive styles for the write section */
+@media only screen and (max-width: 768px) {
+    .write {
+      padding: 20px;
+    }
+    .writeFormTopGroup {
+      flex-direction: column;
+    }
+    .writeFormGroup {
+      gap: 15px;
+    }
+    .writeInput {
+      font-size: 24px;
+      width: 90vw;
+    }
+    .writeText {
+      font-size: 18px;
+      height: 50vh;
+    }
+    .writeSubmit {
+      padding: 5px 10px;
+      height: 30px;
+      width: 80px;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    .writeImg {
+      height: 200px;
+    }
+    .categories {
+      width: 100%;
+    }
+  }
+  

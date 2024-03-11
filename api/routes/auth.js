@@ -2,6 +2,8 @@ const router = require("express").Router();
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 
+
+//register
 router.post("/register", async (req, res) => {
     const salt = await bcrypt.genSalt(10)
     const hashedPassword = await bcrypt.hash(req.body.password, salt)
@@ -13,7 +15,8 @@ router.post("/register", async (req, res) => {
         })
 
         const user = await newUser.save()
-        return res.status(200).json(user)
+        const{password, ...others} = user._doc;
+        return res.status(200).json(others)
     }
     catch(err){
         return res.status(500).json(err)
@@ -21,6 +24,8 @@ router.post("/register", async (req, res) => {
     }
 })
 
+
+//login
 router.post("/login", async (req, res) => {
     try{
         const user = await User.findOne({username : req.body.username})

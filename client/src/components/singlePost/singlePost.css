@@ -4,6 +4,8 @@
 .singlePostWrapper{
     padding:20px;
     padding-right :0;
+    display:flex;
+    flex-direction: column;
 }
 .singlePostImg{
     width:100%;
@@ -16,6 +18,17 @@
     margin: 10px;
     font-family: 'Lora', serif;
     font-size: 28px;
+}
+
+.singlePostTitleInput{
+    text-align: center;
+    margin: 10px;
+    font-family: 'Lora', serif;
+    font-size: 28px;
+    border: none;
+    outline: none;
+    color: gray;
+    border-bottom: 1px solid lightgray;
 }
 .singlePostEdit{
     display:flex;
@@ -46,8 +59,59 @@
     line-height: 30px;
     text-align: justify;
 }
+
+.singlePostDescInput{
+    border: none;
+    color:#666;
+    font-size: 18px;
+    line-height: 30px;
+}
+.singlePostDescInput:focus{
+    outline :none;
+}
 .singlePostDesc::first-letter{
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
 }
+
+.singlePostButton{
+    border: none;
+    background-color: teal;
+    color: white;
+    padding:5px;
+    width:100px;
+    border-radius: 5px;
+    cursor:pointer;
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+/* Add responsive styles for the singlePost section */
+@media only screen and (max-width: 768px) {
+    .singlePost {
+      flex-direction: column;
+    }
+    .singlePostWrapper {
+      padding: 10px;
+    }
+    .singlePostImg {
+      height: 300px;
+    }
+    .singlePostTitle {
+      font-size: 24px;
+    }
+    .singlePostEdit {
+      margin-top: 10px;
+    }
+    .singlePostDesc {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    .singlePostButton {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Add more media queries as needed for other screen sizes */
+  

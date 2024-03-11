@@ -1,72 +1,128 @@
-.settings{
-    display:flex;
+.settings {
+    display: flex;
 }
-.settingsWrapper{
-    flex:9;
-    padding:20px;
+
+.settingsWrapper {
+    flex: 9;
+    padding: 20px;
 }
-.settingsTitle{
-    display:flex;
+
+.settingsTitle {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.settingsUpdateTitle{
+
+.settingsUpdateTitle {
     font-size: 30px;
     margin-bottom: 20px;
-    color:lightcoral;
+    color: lightcoral;
 }
-.settingsDeleteTitle{
-    font-size: 12px;
-    color:red;
-    cursor:pointer;
+
+.settingsDeleteTitle {
+    font-size: 16px;
+    color: coral;
+    cursor: pointer;
 }
-.settingsForm{
-    display:flex;
+
+.settingsForm {
+    display: flex;
     flex-direction: column;
 }
-.settingsPP{
-    display:flex;
+
+.settingsPP {
+    display: flex;
     align-items: center;
     margin: 10px 0;
 }
-.settingsPP > img{
+
+.settingsPP > img {
     width: 70px;
     height: 70px;
     border-radius: 20px;
     object-fit: cover;
 }
-.settingsPPIcon{
+
+.settingsPPIcon {
     width: 25px;
     height: 25px;
     border-radius: 50%;
     background-color: lightcoral;
-    color:white;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-left: 10px;
     cursor: pointer;
 }
-.settingsForm > label{
+
+.settingsForm > label {
     font-size: 20px;
     margin-top: 20px;
 }
 
-.settingsForm > input{
+.settingsForm > input {
     color: rgb(55, 50, 50);
-    margin :10px 0;
+    margin: 10px 0;
     height: 30px;
-    border:none;
-   border-bottom: 1px solid lightgray;
+    border: none;
+    border-bottom: 1px solid lightgray;
 }
-.settingsSubmit{
+
+.settingsSubmit {
     width: 300px;
     align-self: center;
     border: none;
     border-radius: 10px;
-    color:white;
+    color: white;
     background-color: teal;
-    padding:8px 20px;
+    padding: 8px 20px;
     margin-top: 20px;
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.successMessage {
+    color: green;
+    margin: 10px;
+}
+
+.bigicon {
+    font-size: larger;
+}
+
+/* Media query for tablet view */
+@media screen and (max-width: 768px) {
+    .settingsForm > label {
+        font-size: 18px; /* Decrease font size for tablet view */
+    }
+
+    .settingsForm > input {
+        height: 25px; /* Decrease input height for tablet view */
+    }
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 576px) {
+    .settings{
+        flex-direction: column;
+    }
+    .settingsUpdateTitle {
+        font-size: 24px; /* Decrease font size for mobile view */
+    }
+
+    .settingsDeleteTitle {
+        font-size: 12px; /* Decrease font size for mobile view */
+    }
+
+    .settingsForm > label {
+        font-size: 16px; /* Decrease font size for mobile view */
+    }
+
+    .settingsForm > input {
+        height: 20px; /* Decrease input height for mobile view */
+    }
+
+    .settingsSubmit {
+        width: 250px; /* Adjust button width for mobile view */
+    }
 }

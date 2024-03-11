@@ -1,4 +1,33 @@
-.home{
-    display:flex;
+.homepage {
+    display: flex;
+    flex-direction: column; /* Set the main direction to column */
+  }
+  
+  .home.container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+  }
+  
+  .posts-container {
+    width: 100%;
+  }
+  
+  .sidebar-container {
+    width: 100%;
+  }
+  
+  /* Media query for tablet view */
+  @media screen and (min-width: 768px) {
+    .home.container {
+      flex-direction: row; /* Change direction to row for tablet view */
+    }
     
-}
+    .posts-container {
+      width: 80%; /* Adjust width for posts container */
+    }
+    
+    .sidebar-container {
+      width: 30%; /* Adjust width for sidebar container */
+    }
+  }
+  

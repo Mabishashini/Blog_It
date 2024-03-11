@@ -1,22 +1,31 @@
-.post{
-    width:385px;
+.post {
+    width: 350px;
     margin: 0px 25px 40px 25px;
+    padding: 10px;
+    border-radius: 10px;
+    max-height: 480px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-.postImg{
-    width:100%;
-    height:280px;
+
+.postImg {
+    width: 100%;
+    height: 280px;
     object-fit: cover;
     border-radius: 5px;
 }
-.postInfo{
-    display:flex;
-    flex-direction: column;;
+
+.postInfo {
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
-.postCat{
+
+.postCat {
     font-family: 'Varela', sans-serif;
     font-size: 11px;
-    color:#be9656;
+    color: #be9656;
     line-height: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -24,24 +33,29 @@
     cursor: pointer;
 }
 
-.postTitle{
+.postTitle {
     font-family: 'Josefin Slab', serif;
     font-size: 24px;
     font-weight: 700;
- 
     cursor: pointer;
 }
-.postDate{
+
+.postDate {
     font-family: 'Lora', serif;
     font-size: 13px;
     font-style: italic;
-    color:#999;
-    
+    color: #999;
 }
-.postDesc{
+
+.post:hover {
+    transform: scale(1.025); /* Enlarge on hover */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Adjust box shadow on hover */
+  }
+
+.postDesc {
     font-family: 'Varela', sans-serif;
     font-size: 14px;
-    color:#444 ;
+    color: #444;
     line-height: 24px;
     margin-top: 15px;
     overflow: hidden;
@@ -49,4 +63,20 @@
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+}
+
+/* Media query for tablet view */
+@media screen and (max-width: 768px) {
+    .post {
+        width: calc(50% - 50px); /* Adjust width for tablet view */
+        margin: 0px 25px 40px 25px; /* Adjust margins */
+    }
+}
+
+/* Media query for mobile view */
+@media screen and (max-width: 576px) {
+    .post {
+        width: calc(100% - 50px); /* Adjust width for mobile view */
+        margin: 0px 15px 10px 15px; /* Adjust margins */
+    }
 }

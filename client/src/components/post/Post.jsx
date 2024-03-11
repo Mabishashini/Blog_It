@@ -1,22 +1,30 @@
 import "./post.css"
-import postImg from "../../images/post.jpg"
+import {Link, useLocation} from "react-router-dom"
 
-export const Post = () => {
+export const Post = ({post}) => {
+  const PF = "http://localhost:5000/images/"
   return (
     <div className="post" >
-        <img src={postImg} alt="" className="postImg" />
+      {
+        post.photo && <img src={PF + post.photo} alt="" className="postImg" />
+      }
+        
         <div className="postInfo">
-            <div className="postCats">
-                <span className="postCat">Music</span>
-                <span className="postCat">Life</span>
+            <div className="postCats">{
+              post.categories.map((c) => {
+                <span className="postCat">{c.name}</span>
+              })
+            }
             </div>
-            <span className="postTitle">Lorem ipsum dolor sit amet.</span>
+            <Link to={`/post/${post._id}`} className="link">
+
+            <span className="postTitle">{post.title}</span>
+            </Link>
            
-            <span className="postDate">1 hour ago</span>
+            <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
         </div>
         <p className="postDesc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus dolorem pariatur magni quibusdam adipisci facere, reiciendis distinctio accusamus qui illum id natus tempora. Vitae optio dicta impedit magni neque modi nam quod fuga praesentium ab pariatur labore delectus ducimus nulla cupiditate, eum debitis commodi ratione incidunt ullam libero autem nihil!lorem10
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi, pariatur!
+           {post.desc}
         </p>
     </div>
   )

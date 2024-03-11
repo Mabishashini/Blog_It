@@ -1,0 +1,36 @@
+.custom-alert {
+    display:flex;
+    padding: 15px;
+    border-radius: 5px;
+    width:100%;
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .message{
+    margin:auto 0;
+  }
+  .custom-alert.success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .custom-alert.warning {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .custom-alert.err {
+    background-color: #df9ba1;
+    color: #721c24;
+  }
+  
+  .close-button {
+    
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: inherit;
+  }
+  
