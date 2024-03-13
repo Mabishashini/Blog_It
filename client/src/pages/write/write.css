@@ -90,6 +90,7 @@
     border-radius: 25%;
 }
 
+
 /* Add responsive styles for the write section */
 @media only screen and (max-width: 768px) {
     .write {

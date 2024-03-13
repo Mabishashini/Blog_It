@@ -46,12 +46,14 @@ export const Write = () => {
   };
 
   const handleAddCategory = async () => {
+    
     if (newCategory === "") {
       setAddCatError(true);
       return;
     }
     try {
       const res = await axios.post("/categories", { name: newCategory });
+      console.log("Add Category Clicked")
       setAllCategories((prevCategories) => [...prevCategories, res.data]);
       setNewCategory("");
     } catch (err) {
@@ -152,9 +154,16 @@ export const Write = () => {
               renderValue={(selected) =>
                 selected.map((cat) => cat.name).join(", ")
               }
+              MenuProps={{
+                PaperProps: {
+                  style: {
+                    maxHeight: 500, // Adjust the maxHeight as needed
+                  },
+                },
+              }}
             >
               {allCategories.map((category) => (
-                <MenuItem key={category._id} value={category}>
+                <MenuItem key={category._id} value={category} className="menuItem">
                   <Checkbox
                     checked={
                       categories.findIndex((cat) => cat._id === category._id) >
@@ -164,6 +173,8 @@ export const Write = () => {
                   <ListItemText primary={category.name} />
                 </MenuItem>
               ))}
+              </Select>
+              
               <div className="add-category">
                 <input
                   type="text"
@@ -172,12 +183,12 @@ export const Write = () => {
                   onChange={(e) => setNewCategory(e.target.value)}
                   className="writeCheckboxInput"
                 />
-                <button onClick={handleAddCategory} className="writeAddicon">
+                <button onClick={handleAddCategory} type="button"className="writeAddicon">
                   <AddIcon />
                 </button>
               </div>
               {(addCatError) && <Alert type="err" message={"Please add new Category"} onClose={() => (setAddCatError(false))} ></Alert>}
-            </Select>
+            
           </FormControl>
         </div>
 
