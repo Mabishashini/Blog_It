@@ -112,7 +112,7 @@ export const Write = () => {
         )}
 
         <div className="writeFormTopGroup ">
-          <label htmlFor="fileInput">
+          {/*<label htmlFor="fileInput">
             <span className="writeIcon">
               <AddIcon />
             </span>
@@ -122,7 +122,7 @@ export const Write = () => {
             id="fileInput"
             style={{ display: "none" }}
             onChange={(e) => setFile(e.target.files[0])}
-          />
+        />*/}
           <input
             type="text"
             placeholder="Title"
