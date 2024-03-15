@@ -13,13 +13,17 @@ export const Home = () => {
   
 
   useEffect(() => {
-    const fetchData = async() => {
-      const res = await axios.get("/post"+search);
-      setPosts(res.data)
-      console.log(res)
-    }
-    fetchData()
-  }, [search])
+    const fetchData = async () => {
+      try {
+        const res = await axios.get("/post" + search + "&sort=-createdAt");
+        setPosts(res.data);
+        console.log(res);
+      } catch (error) {
+        console.error("Error fetching posts:", error);
+      }
+    };
+    fetchData();
+  }, [search]);
   return (
     <div className='homepage'>
         <Header/>
