@@ -15,7 +15,7 @@ export const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("/post" + search + "&sort=-createdAt");
+        const res = await axios.get("/post" + search );
         setPosts(res.data);
         console.log(res);
       } catch (error) {
