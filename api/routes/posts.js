@@ -42,7 +42,7 @@ router.put("/:id", async (req, res) => {
 
 //delete post
 router.delete("/:id", async (req, res) => {
-    console.log(req.body)
+   
     try{
         const post = await Post.findById(req.params.id)
         
@@ -81,7 +81,6 @@ router.get("/:id",async (req, res) => {
 //get all post
 // get all posts
 router.get("/", async (req, res) => {
-    console.log("req ", req)
     const username = req.query.user;
     const catName = req.query.cat;
     try {
@@ -94,7 +93,6 @@ router.get("/", async (req, res) => {
             posts = await Post.find().sort({ createdAt: -1 });
         }
         res.status(200).json(posts);
-        console.log(posts);
     } catch (err) {
         res.status(500).json(err);
         console.log(err);

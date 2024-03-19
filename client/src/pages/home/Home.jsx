@@ -17,7 +17,6 @@ export const Home = () => {
       try {
         const res = await axios.get("/post" + search );
         setPosts(res.data);
-        console.log(res);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }

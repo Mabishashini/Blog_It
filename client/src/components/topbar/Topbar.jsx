@@ -25,6 +25,12 @@ export const Topbar = () => {
   const handleWriteClick =(e) => {
     setWrite(true);
 
+    
+  }
+  const handleHomeClick =(e) => {
+    if(write === true){
+      setWrite(false)
+    }
   }
   return (
     <div>
@@ -37,7 +43,7 @@ export const Topbar = () => {
       <div className="topcenter">
         <ul className="topList">
           <li className="topListItem">
-            <Link to="/" className="link">
+            <Link to="/" className="link" onClick={handleHomeClick} >
               HOME
             </Link>
           </li>
@@ -81,7 +87,7 @@ export const Topbar = () => {
       </div>
     </div>
     <div>
-    {write && (
+    {!user && write && (
         <Alert
           message={"Please Login to write Blog"}
           type ={"warning"}
